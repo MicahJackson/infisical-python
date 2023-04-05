@@ -146,7 +146,7 @@ def decrypt_symmetric(
     :raises ValueError: If ``ciphertext``, ``iv``, ``tag`` or ``key`` are empty or tag/mac does not match
     :return: Deciphered text
     """
-    if len(ciphertext) == 0 or len(tag) == 0 or len(iv) == 0 or len(key) == 0:
+    if len(tag) == 0 or len(iv) == 0 or len(key) == 0:
         raise ValueError("One of the given parameter is empty!")
 
     m_key = b64decode(key) if isinstance(key, Base64String) else key
